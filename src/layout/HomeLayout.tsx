@@ -16,7 +16,7 @@ const Homelayout = ({children} : LayoutProps) => {
             <link rel="icon" href=''/>
 
       </Head>
-      <main className={'bg-blackBase'}>
+      <main className={'bg-blackBase fixed h-full w-full overflow-y-scroll '}>
 
           {children}
 
