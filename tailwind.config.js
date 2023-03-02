@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blackBase: '#000000',
+        blackBase: '#0f0f0f',
       }
     },
   },
