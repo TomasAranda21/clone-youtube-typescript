@@ -13,29 +13,30 @@ const Wrapper = ({children} : ContainerProps ) => {
 
   return (
 
-<div className={'relative w-full h-[1500px]'}>
-        <div className={' bg-blackBase fixed w-[12%] h-full left-0 top-[55px] overflow-y-scroll overflow-hidden px-0'}>
+<div className={'relative w-full h-[2000px]'}>
+        <div className={' bg-blackBase fixed w-[13%] h-full left-0 top-[55px] overflow-y-scroll overflow-hidden px-0 pr-1'}>
                 <ul className={'flex flex-col p-0'}>
-                <div className={''}>
+                <div className={'px-2 mt-4'}>
                         {navigation.map(nav => (
                         <Li text={nav.text} icon={nav.icon}/>
                         ))}
 
-                        <Divider my="sm" />
+                        <Divider my="sm" color={'gray'} />
 
                         {navigationTwo.map(nav => (
                         <Li text={nav.text} icon={nav.icon}/>
 
                         ))}
 
-                        <Divider my="sm" />
+                        <Divider my="sm" color={'gray'} />
+
 
                         <Li text="SUBSCRIPTIONS" type={'text'}/>
                         {subscriptions.map((subs : any) => (
                             <LiSubs text={subs.name} img={subs.img}/>
                         ))}
                 
-                        <Divider my="sm" />
+                        <Divider my="sm"  color={'gray'} />
 
                         <Li text="EXPLORE" type={'text'}/>
 
@@ -44,26 +45,75 @@ const Wrapper = ({children} : ContainerProps ) => {
 
                         ))}
                         
-                        <Divider my="sm" />
+                        <Divider my="sm" color={'gray'} />
+
 
                         
                         {navSettings.map(nav => (
                         <Li text={nav.text} icon={nav.icon}/>
 
                         ))}
-                        <p>
-                        AboutPressCopyrightContact usCreatorsAdvertiseDevelopers
-                        TermsPrivacyPolicy & SafetyHow YouTube worksTest new features
-                        © 2022 Google LLC
-                        </p>
 
-                        <Divider my="sm" />
+                        <Divider my="sm" color={'gray'} />
+
+                        <div className='pb-10  px-4'>
+                        <div className='flex gap-2'>
+                              {['About', 'Press', 'Copyright'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+                        <div className='flex gap-2'>
+                              {['Contact us',  'Creators'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+                        <div className='flex gap-2'>
+                              {['Advertise, Developers'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+                        <div className='flex gap-2 mt-5'>
+                              {['Terms', 'PrivacyPolicy', '&', 'Safety'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+                        <div className='flex gap-2'>
+                              {['How YouTube works'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+                        <div className='flex gap-2'>
+                              {['Test new features'].map(e => (
+                                <p className='text-gray-100/60 text-xs font-normal' key={e}>
+                                   {e}
+                                </p>
+                              ))}
+                        </div>
+
+                        <p className='text-gray-100/60 text-xs font-normal mt-6 '>
+                        © 2023 Google LLC
+                        </p>
+                </div>
+
+
+                <Divider my="sm" color={'gray'} />
 
                 </div>
                 </ul>
         </div>
 
-        <div className={'py-6 w-[80%] flex flex-wrap gap-4 absolute top-0 left-[17%]'}>
+        <div className={`py-6 w-[84%] px-3
+         overflow-x-hidden bg-blackBase grid  grid-cols-4 absolute top-12 left-[14%]`}>
                 {children}
         </div>
 </div>
