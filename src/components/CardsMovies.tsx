@@ -1,3 +1,4 @@
+import moment from 'moment'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { api } from '../utils/apiMovies'
@@ -7,6 +8,7 @@ const CardsMovies = ({videoId}:any) => {
     const [video, setVideo] = useState<any>({})
     const [channel, seChannel] =  useState<any>({})
     const [loading, setLoading] = useState(true)
+    const [duration, setDuration] = useState('')
     useEffect(() => {
         const doFetch = async () => {
             setLoading(true)
@@ -22,7 +24,10 @@ const CardsMovies = ({videoId}:any) => {
             const json = await res.json()
             
             setVideo(json.items[0])
-            // console.log(json.items[0].snippet.channelId )
+
+            const time = json.items[0].contentDetails.duration.split('PT')[1].replace(/\D/g,':')
+            setDuration(time.substring(0, time.length-1))
+
             const optionChannel = {
                 part: 'snippet,contentDetails,statistics,topicDetails',
                 id: json.items[0].snippet.channelId,
@@ -32,7 +37,6 @@ const CardsMovies = ({videoId}:any) => {
             const response = await fetch(urlChannel)
             const jsonChannel = await response.json()
 
-            console.log('===>', jsonChannel.items[0])
             seChannel(jsonChannel.items[0])
             setLoading(false)
         }
@@ -56,14 +60,14 @@ publishedAt
 
   return (
     <> 
-        <div className={'flex flex-col gap-2 text-white w-[360px] p-[10px] cursor-pointer'} >
-                <div className='relative h-[240px] w-[400px] '>
+        <div className={'flex flex-col gap-2 text-white p-[10px] w-full cursor-pointer'} >
+                <div className='relative  w-[345px] '>
                     <Image src={video.snippet.thumbnails.maxres?.url ? video.snippet.thumbnails.maxres?.url : video.snippet.thumbnails.medium.url } 
-                    width={360} 
-                    height={140} 
-                    objectFit={'cover'}
+                    width={355} 
+                    height={240} 
+                    // objectFit={'cover'}
                     alt='image youtube' className='rounded-xl  ' />
-                    <p className='text-sm right-1 bottom-1 px-1 py-[1px] absolute bg-black rounded'> 22 </p>
+                    <p className='text-xs right-2 bottom-2 px-1 py-[1px] absolute bg-black rounded'> {duration} </p>
                 </div>
 
                 <div className={'flex gap-[10px] items-start px-3'}> 
@@ -80,7 +84,7 @@ publishedAt
                             <div className={'flex items-center gap-2'}>
                                 <p>{video.statistics.viewCount}</p>
                                 <p>•</p>
-                                {/* <p>{item.date} ago</p> */}
+                                <p>{moment(video.snippet.publishedAt).startOf('days').fromNow()}</p>
                             </div>
                         </div>
                     </div>
