@@ -13,7 +13,7 @@ export function CarouselSearch() {
     //   withControls={false}
       classNames={{
         control:
-          'border-none text-xl text-white',
+          'border-none text-xl text-white w-[24%] md:w-[12%]',
       }}
 
     //   breakpoints={[
