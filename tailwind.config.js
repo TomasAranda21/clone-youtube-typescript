@@ -12,6 +12,12 @@ module.exports = {
     extend: {
       colors: {
         blackBase: '#0f0f0f',
+      },
+      screens:{
+        '1xl': '1480px',
+        '3xl': '1920px',
+        '2xs': '550px',
+        'xs': '450px',
       }
     },
   },
