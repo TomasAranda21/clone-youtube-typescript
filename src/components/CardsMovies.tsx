@@ -60,13 +60,13 @@ publishedAt
 
   return (
     <> 
-        <div className={'flex flex-col gap-2 text-white sm:p-[10px] w-full cursor-pointer'} >
-                <div className='relative w-full sm:w-[250px] 2xl:w-[345px] '>
+        <div className={'flex flex-col gap-2 text-white 2xs:p-[10px] w-full cursor-pointer'} >
+                <div className='relative '>
                     <Image src={video.snippet.thumbnails.maxres?.url ? video.snippet.thumbnails.maxres?.url : video.snippet.thumbnails.medium.url } 
-                    width={100} 
+                    width={300} 
                     height={240} 
                     // objectFit={'cover'}
-                    alt='image youtube' className='2xs:rounded-xl w-full sm:w-[250px] 2xl:w-[345px]  ' />
+                    alt='image youtube' className='2xs:rounded-xl relative w-full 2md:w-[270px] 3md:w-[290px]  md:w-[245px] 2xl:w-[345px]  ' />
                     <p className='text-xs right-2 bottom-2 px-1 py-[1px] absolute bg-black rounded'> {duration} </p>
                 </div>
 

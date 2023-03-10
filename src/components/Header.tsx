@@ -17,7 +17,7 @@ const Header = ({searchCarousel} :props  )  => {
 
     <div className={'w-full flex flex-col sticky top-0 z-50 bg-blackBase'}>
     
-      <div className={'w-full py-2 px-2 sm:px-6 flex justify-between mx-auto items-center relative'}>
+      <div className={'w-full py-3 sm:py-2 px-2 sm:px-6 flex justify-between mx-auto items-center relative'}>
 
         <div className={'relative flex items-center gap-4 text-white text-xl'}>
             <p className='hidden sm:block'>{icons.navIcon}</p>

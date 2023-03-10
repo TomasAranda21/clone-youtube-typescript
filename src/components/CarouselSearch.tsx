@@ -7,14 +7,17 @@ export function CarouselSearch() {
     <Carousel
       withIndicators
       height={35}
-      slideSize="12%"
+      // slideSize="12%"
       slideGap="sm"
     //   slidesToScroll={2}
     //   withControls={false}
       classNames={{
         control:
-          'border-none text-xl text-white w-[24%] md:w-[12%]',
-      }}
+          'border-none text-xl text-white ',
+        container: 
+          "w-[40%] md:w-[12%]"
+      }
+    }
 
     //   breakpoints={[
     //     { maxWidth: 'md', slideSize: '50%' },
@@ -25,8 +28,8 @@ export function CarouselSearch() {
     >
     {apiBusquedas.map(e => (
         <Carousel.Slide>
-         <p className={`text-center px-2 py-2 w-full rounded-lg 
-         text-xs font-medium ${e.toLocaleLowerCase() == 'all' ? 'bg-white/90 text-black'
+         <p className={`text-center py-2 w-full rounded-lg 
+         text-[10px] xs:text-xs font-medium ${e.toLocaleLowerCase() == 'all' ? 'bg-white/90 text-black'
          : 'text-white bg-white/10 hover:bg-white/20 duration-100 cursor-pointer' }`}>{e}</p>
       </Carousel.Slide>
      ))} 

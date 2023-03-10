@@ -14,7 +14,7 @@ const Wrapper = ({children} : ContainerProps ) => {
   return (
 
 <div className={'relative w-full h-[2000px]'}>
-        <div className={' bg-blackBase fixed w-[13%] h-full left-0 top-[55px] overflow-y-scroll overflow-hidden px-0 pr-1 hidden xl:block'}>
+        <div className={' bg-blackBase fixed w-[13%] h-full left-0 top-[55px] overflow-y-scroll overflow-hidden px-0 pr-1 hidden 1xl:block'}>
                 <ul className={'flex flex-col p-0'}>
                 <div className={'px-2 mt-4'}>
                         {navigation.map(nav => (
@@ -112,9 +112,9 @@ const Wrapper = ({children} : ContainerProps ) => {
                 </ul>
         </div>
 
-        <div className={`py-6 w-full lg:w-[94%] xl:w-[84%] sm:px-3 lg:left-[6%] xl:left-[11%]
-         overflow-x-hidden bg-blackBase grid 2xs:grid-cols-2 sm:grid-cols-3
-         lg:grid-cols-4 absolute top-12 2xl:left-[14%]`}>
+        <div className={`py-6 w-full lg:w-[94%] xl:w-[84%] sm:px-3 lg:left-[6%] 1xl:left-[12%]
+         overflow-x-hidden bg-blackBase grid 2xs:grid-cols-2 md:grid-cols-3
+         lg:grid-cols-3 xl:grid-cols-4 absolute top-12 2xl:left-[14%] `}>
                 {children}
         </div>
 </div>
