@@ -64,7 +64,8 @@ const CardsVideos = ({videoId} : CardsVideosProps) => {
 
   return (
     <> 
-        <Link href={`/watch/${videoId}`}
+        {/* <Link href={`/watch/${videoId}`} */}
+        <div
         className={'flex flex-col gap-2 mt-5 text-white 2xs:p-[10px] w-full cursor-pointer'} >
                {video?.snippet.thumbnails && 
                     <div className='relative '>
@@ -95,7 +96,8 @@ const CardsVideos = ({videoId} : CardsVideosProps) => {
                         </div>
                     </div>
                 </div>
-            </Link>
+            {/* </Link> */}
+            </div>
     </>
   )
 }

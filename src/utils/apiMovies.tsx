@@ -1,17 +1,4 @@
-export const api = [
-    {
-        name: 'Billie Eilish, Cigarettes After Sex, Carla Morrison, Zubi, Emma Peters',
-        img: 'https://res.cloudinary.com/dj1pp4ivb/image/upload/v1658463689/hqdefault_4_w4mx9q.webp',
-        time: '3:20:02',
-        views: '4.700',
-        icon: 'https://res.cloudinary.com/dj1pp4ivb/image/upload/v1658463698/channels4_profile_5_ga0luc.jpg',
-        nameChannel: 'Universe Nation',
-        date: '11 hours',
-    }
-]
-
 export const apiBusquedas = [
-
     'All',
     'Music',
     'Live',

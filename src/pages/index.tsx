@@ -20,7 +20,7 @@ export default function Home() {
   
         const res = await fetch(url)
         const json = await res.json()
-        // console.log(json)
+        console.log(json.items)
         setData(json.items)
       }
       doFetch()

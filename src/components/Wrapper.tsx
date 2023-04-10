@@ -1,6 +1,5 @@
 import React from 'react'
 import { subscriptions } from '../utils/apiMovies'
-// import LiSubs from '../Li/LiSubs'
 import { navExplore, navigation, navigationTwo, navSettings } from '../../routes'
 import { Li, LiSubs } from './LiAtributte'
 import { Divider } from '@mantine/core'
