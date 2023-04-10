@@ -1,4 +1,5 @@
 import { useDisclosure } from '@mantine/hooks'
+import Image from 'next/image'
 import React, { useState } from 'react'
 // import CardSearch from '../CardSearch/CardSearch'
 import icons from '../../public/icons/Icons'
@@ -42,8 +43,8 @@ const Header = ({searchCarousel} : props  )  => {
         <div className={'flex items-center gap-7 pr-4'}>
               <p className={'text-white text-xl'}>{icons.addVideoIcon}</p>
               <p className={'text-white text-xl'}>{icons.bellIcon}</p>
-              <img style={{cursor: 'pointer'}}
-              src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" width="30" onClick={() => setNavAccount(!navAccount)} />
+              <Image className='cursor-pointer rounded-full' alt="profile image" height={30}
+              src="https://yt3.ggpht.com/yti/AHXOFjVBYKMbEkKRTewzNN2rccSPi_X1ixVA-m50Ix72zQ=s108-c-k-c0x00ffffff-no-rj" width="30" onClick={() => setNavAccount(!navAccount)} />
 
               {navAccount && 
                 <div className={'absolute z-50 top-14 right-6'}>
@@ -54,11 +55,12 @@ const Header = ({searchCarousel} : props  )  => {
       </div>
 
       <div className='py-6 w-full h-[70px] sm:px-5 lg:w-[94%] xl:w-[84%] px-3 
-      lg:left-[6%] xl:left-[11%]
+      lg:left-[6%] xl:left-[11%] overflow-hidden
          overflow-x-hidden bg-blackBase
           absolute top-12 2xl:left-[14%]'>
         <CarouselSearch/>
       </div>
+
       <DrawerMenu opened={opened} close={close}/>
 
     </div>

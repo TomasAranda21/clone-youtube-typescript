@@ -10,7 +10,7 @@ interface LiProps {
 
 const LiAccount = ({text, icon}: LiProps) => {
   return (
-    <li className={'px-4 py-3 flex items-cente gap-4'}>
+    <li className={'px-4 py-3 flex items-cente gap-4 hover:bg-[#2c2c2efb] cursor-pointer'}>
         {icon}
         <p className='font-light text-white/80 text-sm'>{text}</p>
     </li>
