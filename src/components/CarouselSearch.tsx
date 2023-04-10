@@ -27,7 +27,7 @@ export function CarouselSearch() {
       align="start"
     >
     {apiBusquedas.map(e => (
-        <Carousel.Slide>
+      <Carousel.Slide key={e}>
          <p className={`text-center py-2 w-full rounded-lg 
          text-[10px] xs:text-xs font-medium ${e.toLocaleLowerCase() == 'all' ? 'bg-white/90 text-black'
          : 'text-white bg-white/10 hover:bg-white/20 duration-100 cursor-pointer' }`}>{e}</p>
