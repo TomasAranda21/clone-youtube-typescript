@@ -1,7 +1,9 @@
+import { useDisclosure } from '@mantine/hooks'
 import React, { useState } from 'react'
 // import CardSearch from '../CardSearch/CardSearch'
 import icons from '../../public/icons/Icons'
 import { CarouselSearch } from './CarouselSearch'
+import { DrawerMenu } from './DrawerMenu'
 import NavAccount from './NavAccount'
 // import NavAccount from '../NavAccount/NavAccount'
 
@@ -9,9 +11,10 @@ interface props {
     searchCarousel? : boolean
 }
 
-const Header = ({searchCarousel} :props  )  => {
+const Header = ({searchCarousel} : props  )  => {
 
   const [navAccount, setNavAccount] = useState(false)
+  const [opened, { open, close }] = useDisclosure(false);
 
   return (
 
@@ -20,7 +23,9 @@ const Header = ({searchCarousel} :props  )  => {
       <div className={'w-full py-3 sm:py-2 px-2 sm:px-6 flex justify-between mx-auto items-center relative'}>
 
         <div className={'relative flex items-center gap-4 text-white text-xl'}>
+          <button type='button' onClick={open}>
             <p className='hidden sm:block'>{icons.navIcon}</p>
+          </button>
             <img src="https://res.cloudinary.com/dj1pp4ivb/image/upload/v1658415358/fondoPremium_ufik6m.png" width="113"/>
         </div>
 
@@ -54,6 +59,7 @@ const Header = ({searchCarousel} :props  )  => {
           absolute top-12 2xl:left-[14%]'>
         <CarouselSearch/>
       </div>
+      <DrawerMenu opened={opened} close={close}/>
 
     </div>
 
