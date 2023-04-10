@@ -6,6 +6,7 @@ import icons from '../../public/icons/Icons'
 import { subscriptions } from '../utils/apiMovies'
 import { useEffect, useState } from 'react';
 import { useWidth } from '@/hook/useWitdh';
+import Image from 'next/image';
 
 interface DrawerMenuProps {
   close: () => void
@@ -39,18 +40,24 @@ export function DrawerMenu({opened, close}: DrawerMenuProps) {
                 <button type='button' onClick={close}>
                     <p className='hidden sm:block'>{icons.navIcon}</p>
                 </button>
-                    <img src="https://res.cloudinary.com/dj1pp4ivb/image/upload/v1658415358/fondoPremium_ufik6m.png" width="113"/>
+                    <Image src="https://res.cloudinary.com/dj1pp4ivb/image/upload/v1658415358/fondoPremium_ufik6m.png" alt="youtube image" height={30} width={113}/>
                 </div>
                 <ul className={'flex flex-col p-0'}>
                 <div className={'px-2 mt-6'}>
                         {navigation.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+                          </div>
                         ))}
 
                         <Divider my="sm" color={'gray'} />
 
                         {navigationTwo.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
 
@@ -59,7 +66,11 @@ export function DrawerMenu({opened, close}: DrawerMenuProps) {
 
                         <Li text="SUBSCRIPTIONS" type={'text'}/>
                         {subscriptions.map((subs : any) => (
+                          <div key={subs.name}>
                             <LiSubs text={subs.name} img={subs.img}/>
+
+                          </div>
+
                         ))}
                 
                         <Divider my="sm"  color={'gray'} />
@@ -67,14 +78,22 @@ export function DrawerMenu({opened, close}: DrawerMenuProps) {
                         <Li text="EXPLORE" type={'text'}/>
 
                         {navExplore.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
                         
                         <Divider my="sm" color={'gray'} />
 
                         {navSettings.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
 

@@ -17,13 +17,21 @@ const Wrapper = ({children} : ContainerProps ) => {
                 <ul className={'flex flex-col p-0'}>
                 <div className={'px-2 mt-4'}>
                         {navigation.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
                         ))}
 
                         <Divider my="sm" color={'gray'} />
 
                         {navigationTwo.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
 
@@ -32,7 +40,11 @@ const Wrapper = ({children} : ContainerProps ) => {
 
                         <Li text="SUBSCRIPTIONS" type={'text'}/>
                         {subscriptions.map((subs : any) => (
+                          <div key={subs.name}>
                             <LiSubs text={subs.name} img={subs.img}/>
+
+                          </div>
+
                         ))}
                 
                         <Divider my="sm"  color={'gray'} />
@@ -40,7 +52,11 @@ const Wrapper = ({children} : ContainerProps ) => {
                         <Li text="EXPLORE" type={'text'}/>
 
                         {navExplore.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
                         
@@ -49,7 +65,11 @@ const Wrapper = ({children} : ContainerProps ) => {
 
                         
                         {navSettings.map(nav => (
-                        <Li text={nav.text} icon={nav.icon}/>
+                          <div key={nav.text}>
+                            <Li text={nav.text} icon={nav.icon}/>
+
+                          </div>
+
 
                         ))}
 
