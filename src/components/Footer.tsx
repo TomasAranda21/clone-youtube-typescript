@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex justify-center gap-10 items-center text-white ">
             <a href="https://github.com/TomasAranda21" target="_blank">{icons.githubIcon}</a>
             <a href="https://www.linkedin.com/in/tomas--aranda/" target="_blank">{icons.linkedinIcon}</a>
-            <a href="https://tomasaranda.vercel.app" target="_blank">{icons.webIcon}</a>
+            <a href="https://tomasaranda.dev" target="_blank">{icons.webIcon}</a>
         </div>
         <p className='text-center text-white'>Construido por Tomás Aranda</p>
     </footer>
